@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="theluppdatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="LuupChat">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="U_ID" Type="Int32" Nullable="false" />
+    <Property Name="UF_ID" Type="Int32" Nullable="false" />
+    <Property Name="C_Mesage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LuupFreind">
+    <Key>
+      <PropertyRef Name="LP_ID" />
+    </Key>
+    <Property Name="LP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="U_ID" Type="Int32" Nullable="false" />
+    <Property Name="UF_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LuupRequest">
+    <Key>
+      <PropertyRef Name="LR_ID" />
+    </Key>
+    <Property Name="LR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="U_ID" Type="Int32" Nullable="false" />
+    <Property Name="UR_ID" Type="Int32" Nullable="false" />
+    <Property Name="LR_STATUS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Management">
+    <Key>
+      <PropertyRef Name="M_ID" />
+    </Key>
+    <Property Name="M_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="U_ID" Type="Int32" Nullable="false" />
+    <Property Name="R_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Restuarent" Relationship="Self.FK__Management__R_ID__31EC6D26" FromRole="Management" ToRole="Restuarent" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Management__U_ID__2B3F6F97" FromRole="Management" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Menue">
+    <Key>
+      <PropertyRef Name="MU_ID" />
+    </Key>
+    <Property Name="MU_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="R_ID" Type="Int32" Nullable="false" />
+    <Property Name="MU_FOODNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MU_FOODDES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MU_FOODIMAGE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MU_FOODPRICE" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Restuarent" Relationship="Self.FK__Menues__R_ID__32E0915F" FromRole="Menues" ToRole="Restuarent" />
+  </EntityType>
+  <EntityType Name="Restuarent">
+    <Key>
+      <PropertyRef Name="R_ID" />
+    </Key>
+    <Property Name="R_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="R_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="R_LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="R_IMAGE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="R_RATING" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Managements" Relationship="Self.FK__Management__R_ID__31EC6D26" FromRole="Restuarent" ToRole="Management" />
+    <NavigationProperty Name="Menues" Relationship="Self.FK__Menues__R_ID__32E0915F" FromRole="Restuarent" ToRole="Menues" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="U_ID" />
+    </Key>
+    <Property Name="U_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="U_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="U_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="U_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="U_PASSWORD" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="U_IMAGE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="U_TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Managements" Relationship="Self.FK__Management__U_ID__2B3F6F97" FromRole="Users" ToRole="Management" />
+  </EntityType>
+  <Association Name="FK__Management__R_ID__31EC6D26">
+    <End Role="Restuarent" Type="Self.Restuarent" Multiplicity="1" />
+    <End Role="Management" Type="Self.Management" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restuarent">
+        <PropertyRef Name="R_ID" />
+      </Principal>
+      <Dependent Role="Management">
+        <PropertyRef Name="R_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Management__U_ID__2B3F6F97">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Management" Type="Self.Management" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="Management">
+        <PropertyRef Name="U_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Menues__R_ID__32E0915F">
+    <End Role="Restuarent" Type="Self.Restuarent" Multiplicity="1" />
+    <End Role="Menues" Type="Self.Menue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restuarent">
+        <PropertyRef Name="R_ID" />
+      </Principal>
+      <Dependent Role="Menues">
+        <PropertyRef Name="R_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="theluppdatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="LuupChats" EntityType="Self.LuupChat" />
+    <EntitySet Name="LuupFreinds" EntityType="Self.LuupFreind" />
+    <EntitySet Name="LuupRequests" EntityType="Self.LuupRequest" />
+    <EntitySet Name="Managements" EntityType="Self.Management" />
+    <EntitySet Name="Menues" EntityType="Self.Menue" />
+    <EntitySet Name="Restuarents" EntityType="Self.Restuarent" />
+    <EntitySet Name="Tables" EntityType="Self.Table" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Management__R_ID__31EC6D26" Association="Self.FK__Management__R_ID__31EC6D26">
+      <End Role="Restuarent" EntitySet="Restuarents" />
+      <End Role="Management" EntitySet="Managements" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Management__U_ID__2B3F6F97" Association="Self.FK__Management__U_ID__2B3F6F97">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Management" EntitySet="Managements" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Menues__R_ID__32E0915F" Association="Self.FK__Menues__R_ID__32E0915F">
+      <End Role="Restuarent" EntitySet="Restuarents" />
+      <End Role="Menues" EntitySet="Menues" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

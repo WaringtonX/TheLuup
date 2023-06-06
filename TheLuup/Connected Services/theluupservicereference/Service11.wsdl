@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://theluup-001-site1.dtempurl.com/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://theluup-001-site1.dtempurl.com/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://theluup-001-site1.dtempurl.com/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/theluupwcf" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_signin_InputMessage">
+    <wsdl:part name="parameters" element="tns:signin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_signin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:signinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUsers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddResturant_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddResturant" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddResturant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResturantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getResturant_InputMessage">
+    <wsdl:part name="parameters" element="tns:getResturant" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getResturant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getResturantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getResturants_InputMessage">
+    <wsdl:part name="parameters" element="tns:getResturants" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getResturants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getResturantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditResturant_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditResturant" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditResturant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditResturantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteResturant_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResturant" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteResturant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResturantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddManagement" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditManagement" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteManagement" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddMenues_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMenues" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddMenues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMenuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getMenue_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMenue" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getMenue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMenueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getMenues_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMenues" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getMenues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMenuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditMenue_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditMenue" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditMenue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditMenueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteMenu_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMenu" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteMenu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteMenus_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMenus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteMenus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMenusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRequest" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRequest" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRequest" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRequests" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateRequestStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRequestStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateRequestStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRequestStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddFreind_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFreind" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddFreind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFreindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getFreinds_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFreinds" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getFreinds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFreindsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getFreind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFreind" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getFreind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFreindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddChat" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:getChat" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroup" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:getGroup" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getSingleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSingleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getSingleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSingleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="signin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/signin" message="tns:IService1_signin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/signinResponse" message="tns:IService1_signin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddUser" message="tns:IService1_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddUserResponse" message="tns:IService1_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getUser" message="tns:IService1_getUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getUserResponse" message="tns:IService1_getUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getUsers" message="tns:IService1_getUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getUsersResponse" message="tns:IService1_getUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getUserID" message="tns:IService1_getUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getUserIDResponse" message="tns:IService1_getUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteUser" message="tns:IService1_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteUserResponse" message="tns:IService1_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditUser" message="tns:IService1_EditUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditUserResponse" message="tns:IService1_EditUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddResturant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddResturant" message="tns:IService1_AddResturant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddResturantResponse" message="tns:IService1_AddResturant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getResturant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getResturant" message="tns:IService1_getResturant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getResturantResponse" message="tns:IService1_getResturant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getResturants">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getResturants" message="tns:IService1_getResturants_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getResturantsResponse" message="tns:IService1_getResturants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditResturant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditResturant" message="tns:IService1_EditResturant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditResturantResponse" message="tns:IService1_EditResturant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteResturant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteResturant" message="tns:IService1_DeleteResturant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteResturantResponse" message="tns:IService1_DeleteResturant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddManagement" message="tns:IService1_AddManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddManagementResponse" message="tns:IService1_AddManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRID" message="tns:IService1_getRID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRIDResponse" message="tns:IService1_getRID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditManagement" message="tns:IService1_EditManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditManagementResponse" message="tns:IService1_EditManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteManagement" message="tns:IService1_DeleteManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteManagementResponse" message="tns:IService1_DeleteManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMenues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddMenues" message="tns:IService1_AddMenues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddMenuesResponse" message="tns:IService1_AddMenues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMenue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getMenue" message="tns:IService1_getMenue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getMenueResponse" message="tns:IService1_getMenue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMenues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getMenues" message="tns:IService1_getMenues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getMenuesResponse" message="tns:IService1_getMenues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditMenue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditMenue" message="tns:IService1_EditMenue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditMenueResponse" message="tns:IService1_EditMenue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteMenu" message="tns:IService1_DeleteMenu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteMenuResponse" message="tns:IService1_DeleteMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteMenus" message="tns:IService1_DeleteMenus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteMenusResponse" message="tns:IService1_DeleteMenus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddRequest" message="tns:IService1_AddRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddRequestResponse" message="tns:IService1_AddRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteRequest" message="tns:IService1_DeleteRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteRequestResponse" message="tns:IService1_DeleteRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRequest" message="tns:IService1_getRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRequestResponse" message="tns:IService1_getRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRequests" message="tns:IService1_getRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRequestsResponse" message="tns:IService1_getRequests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateRequestStatus" message="tns:IService1_UpdateRequestStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateRequestStatusResponse" message="tns:IService1_UpdateRequestStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFreind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddFreind" message="tns:IService1_AddFreind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddFreindResponse" message="tns:IService1_AddFreind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFreinds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getFreinds" message="tns:IService1_getFreinds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getFreindsResponse" message="tns:IService1_getFreinds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFreind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getFreind" message="tns:IService1_getFreind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getFreindResponse" message="tns:IService1_getFreind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddChat" message="tns:IService1_AddChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddChatResponse" message="tns:IService1_AddChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getChat" message="tns:IService1_getChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getChatResponse" message="tns:IService1_getChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddGroup" message="tns:IService1_AddGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddGroupResponse" message="tns:IService1_AddGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getGroup" message="tns:IService1_getGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getGroupResponse" message="tns:IService1_getGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSingleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getSingleGroup" message="tns:IService1_getSingleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getSingleGroupResponse" message="tns:IService1_getSingleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="signin">
+      <soap:operation soapAction="http://tempuri.org/IService1/signin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/getUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <soap:operation soapAction="http://tempuri.org/IService1/getUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserID">
+      <soap:operation soapAction="http://tempuri.org/IService1/getUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/EditUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddResturant">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddResturant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResturant">
+      <soap:operation soapAction="http://tempuri.org/IService1/getResturant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResturants">
+      <soap:operation soapAction="http://tempuri.org/IService1/getResturants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditResturant">
+      <soap:operation soapAction="http://tempuri.org/IService1/EditResturant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteResturant">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteResturant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddManagement">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRID">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditManagement">
+      <soap:operation soapAction="http://tempuri.org/IService1/EditManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManagement">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMenues">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddMenues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMenue">
+      <soap:operation soapAction="http://tempuri.org/IService1/getMenue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMenues">
+      <soap:operation soapAction="http://tempuri.org/IService1/getMenues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditMenue">
+      <soap:operation soapAction="http://tempuri.org/IService1/EditMenue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenu">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenus">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteMenus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRequest">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRequest">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRequest">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRequests">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateRequestStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFreind">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddFreind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFreinds">
+      <soap:operation soapAction="http://tempuri.org/IService1/getFreinds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFreind">
+      <soap:operation soapAction="http://tempuri.org/IService1/getFreind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddChat">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddChat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChat">
+      <soap:operation soapAction="http://tempuri.org/IService1/getChat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGroup">
+      <soap:operation soapAction="http://tempuri.org/IService1/getGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSingleGroup">
+      <soap:operation soapAction="http://tempuri.org/IService1/getSingleGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://theluup-001-site1.dtempurl.com/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

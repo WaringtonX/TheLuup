@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>C:\Users\Warington\Desktop\The Srt</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/theluppdatabase.mdf">
+      <publishTime>02/06/2021 18:11:56</publishTime>
+    </File>
+    <File Include="App_Data/theluppdatabase_log.ldf">
+      <publishTime>02/06/2021 18:11:56</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>06/07/2018 21:03:48</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>06/07/2018 21:03:48</publishTime>
+    </File>
+    <File Include="bin/theluupwcf.dll">
+      <publishTime>02/06/2021 18:12:27</publishTime>
+    </File>
+    <File Include="bin/theluupwcf.pdb">
+      <publishTime>02/06/2021 18:12:27</publishTime>
+    </File>
+    <File Include="Service1.svc">
+      <publishTime>12/21/2020 12:47:58</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/08/2021 04:02:10</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

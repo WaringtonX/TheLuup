@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="theluppdatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LuupChat">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="U_ID" Type="int" Nullable="false" />
+    <Property Name="UF_ID" Type="int" Nullable="false" />
+    <Property Name="C_Mesage" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LuupFreinds">
+    <Key>
+      <PropertyRef Name="LP_ID" />
+    </Key>
+    <Property Name="LP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="U_ID" Type="int" Nullable="false" />
+    <Property Name="UF_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LuupRequest">
+    <Key>
+      <PropertyRef Name="LR_ID" />
+    </Key>
+    <Property Name="LR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="U_ID" Type="int" Nullable="false" />
+    <Property Name="UR_ID" Type="int" Nullable="false" />
+    <Property Name="LR_STATUS" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Management">
+    <Key>
+      <PropertyRef Name="M_ID" />
+    </Key>
+    <Property Name="M_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="U_ID" Type="int" Nullable="false" />
+    <Property Name="R_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menues">
+    <Key>
+      <PropertyRef Name="MU_ID" />
+    </Key>
+    <Property Name="MU_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="R_ID" Type="int" Nullable="false" />
+    <Property Name="MU_FOODNAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MU_FOODDES" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MU_FOODIMAGE" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MU_FOODPRICE" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Restuarent">
+    <Key>
+      <PropertyRef Name="R_ID" />
+    </Key>
+    <Property Name="R_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="R_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="R_LOCATION" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="R_IMAGE" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="R_RATING" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="U_ID" />
+    </Key>
+    <Property Name="U_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="U_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="U_SURNAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="U_EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="U_PASSWORD" Type="varchar" MaxLength="400" Nullable="false" />
+    <Property Name="U_IMAGE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="U_TYPE" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Management__R_ID__31EC6D26">
+    <End Role="Restuarent" Type="Self.Restuarent" Multiplicity="1" />
+    <End Role="Management" Type="Self.Management" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restuarent">
+        <PropertyRef Name="R_ID" />
+      </Principal>
+      <Dependent Role="Management">
+        <PropertyRef Name="R_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Management__U_ID__2B3F6F97">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Management" Type="Self.Management" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="Management">
+        <PropertyRef Name="U_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Menues__R_ID__32E0915F">
+    <End Role="Restuarent" Type="Self.Restuarent" Multiplicity="1" />
+    <End Role="Menues" Type="Self.Menues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restuarent">
+        <PropertyRef Name="R_ID" />
+      </Principal>
+      <Dependent Role="Menues">
+        <PropertyRef Name="R_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="theluppdatabaseModelStoreContainer">
+    <EntitySet Name="LuupChat" EntityType="Self.LuupChat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LuupFreinds" EntityType="Self.LuupFreinds" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LuupRequest" EntityType="Self.LuupRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Management" EntityType="Self.Management" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menues" EntityType="Self.Menues" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Restuarent" EntityType="Self.Restuarent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Management__R_ID__31EC6D26" Association="Self.FK__Management__R_ID__31EC6D26">
+      <End Role="Restuarent" EntitySet="Restuarent" />
+      <End Role="Management" EntitySet="Management" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Management__U_ID__2B3F6F97" Association="Self.FK__Management__U_ID__2B3F6F97">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Management" EntitySet="Management" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Menues__R_ID__32E0915F" Association="Self.FK__Menues__R_ID__32E0915F">
+      <End Role="Restuarent" EntitySet="Restuarent" />
+      <End Role="Menues" EntitySet="Menues" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

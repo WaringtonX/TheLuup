@@ -1,0 +1,12 @@
+C:\Users\Warington\source\repos\TheLuup\theluupwcf\bin\theluupwcf.dll.config
+C:\Users\Warington\source\repos\TheLuup\theluupwcf\bin\theluupwcf.dll
+C:\Users\Warington\source\repos\TheLuup\theluupwcf\bin\theluupwcf.pdb
+C:\Users\Warington\source\repos\TheLuup\theluupwcf\bin\EntityFramework.dll
+C:\Users\Warington\source\repos\TheLuup\theluupwcf\bin\EntityFramework.SqlServer.dll
+C:\Users\Warington\source\repos\TheLuup\theluupwcf\bin\EntityFramework.xml
+C:\Users\Warington\source\repos\TheLuup\theluupwcf\bin\EntityFramework.SqlServer.xml
+C:\Users\Warington\source\repos\TheLuup\theluupwcf\obj\Debug\theluupwcf.csproj.CoreCompileInputs.cache
+C:\Users\Warington\source\repos\TheLuup\theluupwcf\obj\Debug\theluupwcf.csproj.CopyComplete
+C:\Users\Warington\source\repos\TheLuup\theluupwcf\obj\Debug\theluupwcf.dll
+C:\Users\Warington\source\repos\TheLuup\theluupwcf\obj\Debug\theluupwcf.pdb
+C:\Users\Warington\source\repos\TheLuup\theluupwcf\obj\Debug\theluupwcf.csprojAssemblyReference.cache

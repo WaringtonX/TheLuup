@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="theluppdatabaseModelStoreContainer" CdmEntityContainer="theluppdatabaseEntities">
+    <EntitySetMapping Name="LuupChats">
+      <EntityTypeMapping TypeName="theluppdatabaseModel.LuupChat">
+        <MappingFragment StoreEntitySet="LuupChat">
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+          <ScalarProperty Name="UF_ID" ColumnName="UF_ID" />
+          <ScalarProperty Name="C_Mesage" ColumnName="C_Mesage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LuupFreinds">
+      <EntityTypeMapping TypeName="theluppdatabaseModel.LuupFreind">
+        <MappingFragment StoreEntitySet="LuupFreinds">
+          <ScalarProperty Name="LP_ID" ColumnName="LP_ID" />
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+          <ScalarProperty Name="UF_ID" ColumnName="UF_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LuupRequests">
+      <EntityTypeMapping TypeName="theluppdatabaseModel.LuupRequest">
+        <MappingFragment StoreEntitySet="LuupRequest">
+          <ScalarProperty Name="LR_ID" ColumnName="LR_ID" />
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+          <ScalarProperty Name="UR_ID" ColumnName="UR_ID" />
+          <ScalarProperty Name="LR_STATUS" ColumnName="LR_STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Managements">
+      <EntityTypeMapping TypeName="theluppdatabaseModel.Management">
+        <MappingFragment StoreEntitySet="Management">
+          <ScalarProperty Name="M_ID" ColumnName="M_ID" />
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+          <ScalarProperty Name="R_ID" ColumnName="R_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menues">
+      <EntityTypeMapping TypeName="theluppdatabaseModel.Menue">
+        <MappingFragment StoreEntitySet="Menues">
+          <ScalarProperty Name="MU_ID" ColumnName="MU_ID" />
+          <ScalarProperty Name="R_ID" ColumnName="R_ID" />
+          <ScalarProperty Name="MU_FOODNAME" ColumnName="MU_FOODNAME" />
+          <ScalarProperty Name="MU_FOODDES" ColumnName="MU_FOODDES" />
+          <ScalarProperty Name="MU_FOODIMAGE" ColumnName="MU_FOODIMAGE" />
+          <ScalarProperty Name="MU_FOODPRICE" ColumnName="MU_FOODPRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restuarents">
+      <EntityTypeMapping TypeName="theluppdatabaseModel.Restuarent">
+        <MappingFragment StoreEntitySet="Restuarent">
+          <ScalarProperty Name="R_ID" ColumnName="R_ID" />
+          <ScalarProperty Name="R_NAME" ColumnName="R_NAME" />
+          <ScalarProperty Name="R_LOCATION" ColumnName="R_LOCATION" />
+          <ScalarProperty Name="R_IMAGE" ColumnName="R_IMAGE" />
+          <ScalarProperty Name="R_RATING" ColumnName="R_RATING" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="theluppdatabaseModel.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="theluppdatabaseModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+          <ScalarProperty Name="U_NAME" ColumnName="U_NAME" />
+          <ScalarProperty Name="U_SURNAME" ColumnName="U_SURNAME" />
+          <ScalarProperty Name="U_EMAIL" ColumnName="U_EMAIL" />
+          <ScalarProperty Name="U_PASSWORD" ColumnName="U_PASSWORD" />
+          <ScalarProperty Name="U_IMAGE" ColumnName="U_IMAGE" />
+          <ScalarProperty Name="U_TYPE" ColumnName="U_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
